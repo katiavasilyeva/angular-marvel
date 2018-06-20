@@ -1,0 +1,92 @@
+button {
+  background-color: #bfa1e4;
+  color: rgb(255, 255, 255);
+  border: 1px solid rgb(84, 81, 85);
+  padding: 10px;
+  font-size: 1.2em;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+    'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  margin: 10px;
+  border-radius: 5px;
+}
+
+h1 {
+  color: rgb(255, 255, 255);
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+    'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+p {
+  font-size: 1.2em;
+  color: rgb(28, 24, 29);
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+    'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.button-group {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+.column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.content {
+  justify-content: center;
+  border: 5px solid darkgrey;
+  margin: 10px 10px;
+}
+
+.header {
+  justify-content: center;
+  background: linear-gradient(to right, rgb(120, 45, 240), rgb(231, 205, 227));
+  padding: 60px;
+}
+
+.button-reset {
+  background: rgb(163, 160, 160);
+}
+
+.inline {
+  display: inline;
+}
+
+.error {
+  color: red;
+}
+
+.navbar {
+  display: flex;
+  background: linear-gradient(to right, rgb(120, 45, 240), rgb(231, 205, 227));
+  align-items: stretch;
+}
+
+.navbar a {
+  color: white;
+  padding: 14px 20px;
+  text-decoration: none;
+  text-align: center;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+    'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.search-form {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 20px;
+}
+
+input {
+  margin: 5px;
+  height: 20px;
+}

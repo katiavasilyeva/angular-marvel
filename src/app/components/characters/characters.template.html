@@ -1,0 +1,10 @@
+<div class="mw9 center ph3-ns">
+
+  <div class="cf ph2-ns tc">
+    <p class="avenir mid-gray" *ngIf="characters.pending">Loading...</p>
+    <character [character]="character" *ngFor="let character of characters.data">
+    </character>
+  </div>
+</div>
+
+<p *ngIf="characters.error">{{characters.error}}</p>

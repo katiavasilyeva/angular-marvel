@@ -1,0 +1,18 @@
+<form [formGroup]="searchBoxForm" (ngSubmit)="search()">
+  <div class="search-form">
+    <label for="searchText"> Search </label>
+    <input type="text" name="searchText" id="searchText" [formControl]='searchText'>
+    <button type='submit'>submit</button>
+    <div [hidden]="searchText.valid || searchText.untouched">
+      <div class="error" [hidden]="!searchText.hasError('minlength')">
+        Search term needs to be at least 5 characters long
+      </div>
+      <div class="error" [hidden]="!searchText.hasError('maxlength')">
+        Search term cannot exceed 10 characters
+      </div>
+      <div class="error" [hidden]="!searchText.hasError('required')">
+        Search string is required
+      </div>
+    </div>
+  </div>
+</form>

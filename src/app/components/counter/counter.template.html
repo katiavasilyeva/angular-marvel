@@ -1,0 +1,13 @@
+<div class="row content">
+  <p>
+    Clicked: {{counter.currentValue}} times
+  </p>
+</div>
+<div class="button-group">
+  <button (click)="onIncrement.emit()">+</button>
+  <button (click)="onDecrement.emit()">-</button>
+
+</div>
+<div class="button-group">
+  <button class="button-reset" (click)="onReset.emit()">reset</button>
+</div>
