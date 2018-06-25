@@ -1,27 +1,15 @@
-import { Component } from '@angular/core';
-import {
-  Validators,
-  FormGroup,
-  FormControl,
-  FormBuilder
-} from '@angular/forms';
+import { Component, EventEmitter, Output, Input } from '@angular/core';
 
 @Component({
-  selector: 'search-box',
-  templateUrl: './search-box.template.html',
-  styleUrls: ['../../app.component.css']
+  selector: 'search',
+  templateUrl: './search-box.template.html'
 })
 export class SearchBoxComponent {
-  searchText = new FormControl('', [
-    Validators.required,
-    Validators.minLength(5),
-    Validators.maxLength(10)
-  ]);
-  searchBoxForm: FormGroup = this.builder.group({
-    searchText: this.searchText
-  });
-  constructor(private builder: FormBuilder) {}
-  search() {
-    this.searchBoxForm.valid ? console.log('valid') : console.log('invalid');
-  }
+  @Input() searchString: string;
+
+  @Output() valueChange = new EventEmitter();
+
+  valueChanged = event => {
+    this.valueChange.emit(event.target.value);
+  };
 }

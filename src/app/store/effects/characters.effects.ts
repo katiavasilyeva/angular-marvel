@@ -1,17 +1,9 @@
 import { Injectable } from '@angular/core';
 import { Actions, Effect } from '@ngrx/effects';
-import { Observable } from 'rxjs';
-import {
-  map,
-  tap,
-  switchMap,
-  throttle,
-  auditTime,
-  mergeMap
-} from 'rxjs/operators';
+import { map, tap, switchMap, mergeMap } from 'rxjs/operators';
 import { CharactersActions } from '../characters/characters.actions';
 import { CharactersService } from '../../services/characters.service';
-import { reset } from 'ngrx-forms';
+import { of, Observable } from 'rxjs';
 
 @Injectable()
 export class CharactersEffects {
@@ -25,13 +17,15 @@ export class CharactersEffects {
     tap(val => {
       console.log('the action is', val);
     }),
-    switchMap(action =>
+    mergeMap(action =>
       this.charactersService.fetchCharacters().pipe(
         tap(val => console.log(val)),
-        map(res => ({
-          type: CharactersActions.GET_CHARACTERS_SUCCESS,
-          payload: res['data']['results']
-        }))
+        switchMap(res =>
+          of({
+            type: CharactersActions.GET_CHARACTERS_SUCCESS,
+            payload: res['data']['results']
+          })
+        )
       )
     )
   );

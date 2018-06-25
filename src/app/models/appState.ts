@@ -7,6 +7,6 @@ import { Characters } from './characters';
 export interface AppState {
   readonly counter: Counter;
   readonly language: Language;
-  readonly searchText: FormGroupState<RootForm>;
+  readonly searchText: string;
   readonly characters: Characters;
 }

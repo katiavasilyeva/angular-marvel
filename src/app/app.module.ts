@@ -25,6 +25,13 @@ import { CharactersSelector } from './selectors/characters.selector';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { EffectsModule } from '@ngrx/effects';
 import { CharactersEffects } from './store/effects/characters.effects';
+import { CharacterEffects } from './store/effects/character.effects';
+import { CharacterActions } from './store/character/character.actions';
+import { CharacterService } from './services/character.service';
+import { SearchService } from './services/search.service';
+import { SearchBoxContainer } from './components/search-box/search-box.container';
+import { SearchActions } from './store/search/search.actions';
+import { SearchEffects } from './store/effects/search.effects';
 // decorator function, convert a simple class into an angular module
 @NgModule({
   declarations: [
@@ -36,7 +43,8 @@ import { CharactersEffects } from './store/effects/characters.effects';
     CounterContainer,
     CharactersComponent,
     CharacterComponent,
-    CharactersContainer
+    CharactersContainer,
+    SearchBoxContainer
   ],
   imports: [
     routing,
@@ -47,7 +55,7 @@ import { CharactersEffects } from './store/effects/characters.effects';
     StoreDevtoolsModule.instrument({
       maxAge: 5
     }),
-    EffectsModule.forRoot([CharactersEffects])
+    EffectsModule.forRoot([CharactersEffects, CharacterEffects, SearchEffects])
   ],
   providers: [
     CounterActions,
@@ -56,7 +64,11 @@ import { CharactersEffects } from './store/effects/characters.effects';
     LanguageService,
     CharactersService,
     CharactersActions,
-    CharactersSelector
+    CharactersSelector,
+    CharacterActions,
+    CharacterService,
+    SearchService,
+    SearchActions
   ],
   bootstrap: [AppComponent]
 })

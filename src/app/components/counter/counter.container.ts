@@ -18,6 +18,5 @@ export class CounterContainer {
     public counterActions: CounterActions
   ) {
     this.counter$ = counterService.getCurrentValue();
-    console.log(this.counter$);
   }
 }

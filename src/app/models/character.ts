@@ -1,6 +1,5 @@
 export interface Character {
-  id: number;
-  name: string;
-  description: string;
-  imageUrl: string;
+  data: {};
+  error: null;
+  pending: false;
 }

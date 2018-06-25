@@ -1,14 +1,13 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
 import { timeStamp, publicKey, hash } from './marvelApiConfig';
 
 @Injectable()
-export class CharactersService {
+export class CharacterService {
   constructor(private http: HttpClient) {}
-  fetchCharacters(): Observable<any> {
+  fetchCharacter = (id: string) => {
     return this.http.get(
-      `https://gateway.marvel.com/v1/public/characters?ts=${timeStamp}&apikey=${publicKey}&hash=${hash}`
+      `https://gateway.marvel.com/v1/public/characters/${id}?ts=${timeStamp}&apikey=${publicKey}&hash=${hash}`
     );
-  }
+  };
 }

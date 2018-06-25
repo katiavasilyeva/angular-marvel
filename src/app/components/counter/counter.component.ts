@@ -3,8 +3,7 @@ import { Counter } from '../../models/counter';
 
 @Component({
   selector: 'counter',
-  templateUrl: './counter.template.html',
-  styleUrls: ['../../app.component.css']
+  templateUrl: './counter.template.html'
 })
 export class CounterComponent {
   @Input() counter: Counter;

@@ -3,8 +3,7 @@ import { Language } from '../../models/language';
 
 @Component({
   selector: 'language',
-  templateUrl: './language.template.html',
-  styleUrls: ['../../app.component.css']
+  templateUrl: './language.template.html'
 })
 export class LanguageComponent {
   @Input() language: Language;
